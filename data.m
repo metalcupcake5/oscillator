@@ -1,3 +1,10 @@
+recorded_data = readtable("raw_data.csv");
+
+time_start = 580;
+time_end = 17340;
+recorded_time = recorded_data.time(time_start:time_end);
+recorded_acceleration = recorded_data.linear_acceleration_y(time_start:time_end);
+
 mass = 1;
 k = 1; % spring constant, N/m
 c = 0; % damping coeff, (N * s)/m
@@ -23,8 +30,8 @@ xlabel("Displacement (m)");
 ylabel("Force (N)");
 
 % measured data (phone)
-accel = [2];
-time = [2];
+time = recorded_time;
+accel = recorded_acceleration;
 figure();
 plot(time, accel);
 title("Experimental data (Phone)")
