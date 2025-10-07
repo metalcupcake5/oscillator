@@ -8,8 +8,8 @@ omega_n_2 = 1; % natural freq from accel, rad/s
 zeta = 1; % damping ratio, dimensionless
 
 % measured data (spring)
-force = [1];
-displacement = [1];
+force = [0 3.2 12.3 21.6 30.6 38.9 48.4];
+displacement = [0 50 100 150 200 250 300];
 
 figure();
 plot(displacement, force);
