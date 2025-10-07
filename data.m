@@ -8,19 +8,30 @@ omega_n_2 = 1; % natural freq from accel, rad/s
 zeta = 1; % damping ratio, dimensionless
 
 % measured data (spring)
-force = [];
-displacement = [];
-
-plot(displacement, force);
-
-% measured data (phone)
-accel = [];
-time = [];
-plot(time, accel);
+force = [1];
+displacement = [1];
 
 figure();
-hold on;
-scatter(-sigma, omega_d)
-scatter(-sigma, -omega_d)
+plot(displacement, force);
+title("Experimental Data (Spring Characterization)")
+xlabel("Displacement (m)");
+ylabel("Force (N)");
 
+% measured data (phone)
+accel = [2];
+time = [2];
+figure();
+plot(time, accel);
+title("Experimental data (Phone)")
+xlabel("Time (s)");
+ylabel("Acceleration (m/s^2)")
+
+% complex exponential coeffs
+figure();
+scatter(-sigma, omega_d);
+hold on;
+scatter(-sigma, -omega_d);
+title("Complex Exponential Coefficients")
+xlabel("-\sigma")
+ylabel("\omega_d")
 
