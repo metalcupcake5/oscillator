@@ -11,8 +11,13 @@ zeta = 1; % damping ratio, dimensionless
 force = [0 3.2 12.3 21.6 30.6 38.9 48.4];
 displacement = [0 50 100 150 200 250 300];
 
+%curve fitting (with Curve Fitting Toolbox).
+[xData, yData] = prepareCurveData( displacement, force );
+ft = fittype( 'poly2' );
+[fitresult, gof] = fit( xData, yData, ft );
+
 figure();
-plot(displacement, force);
+plot( fitresult, xData, yData );
 title("Experimental Data (Spring Characterization)")
 xlabel("Displacement (m)");
 ylabel("Force (N)");
