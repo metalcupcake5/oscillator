@@ -15,8 +15,8 @@ omega_n_2 = 1; % natural freq from accel, rad/s
 zeta = 1; % damping ratio, dimensionless
 
 % measured data (spring)
-force = [0 3.2 12.3 21.6 30.6 38.9 48.4];
-displacement = [0 50 100 150 200 250 300];
+force = [0 3.2 12.3 21.6 30.6 38.9 48.4].*0.001; %convert g to kg
+displacement = [0 50 100 150 200 250 300].*0.01; %convert cm to m
 
 %curve fitting (with Curve Fitting Toolbox).
 [xData, yData] = prepareCurveData( displacement, force );
