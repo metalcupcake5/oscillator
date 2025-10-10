@@ -5,12 +5,12 @@ time_end = 17340;
 recorded_time = recorded_data.time(time_start:time_end);
 recorded_acceleration = recorded_data.linear_acceleration_y(time_start:time_end);
 
-mass = 1;
-k = 1; % spring constant, N/m
+mass = 255;
+k = 0.01279291; % spring constant, N/m
 c = 0; % damping coeff, (N * s)/m
 sigma = 1; % exponential decay rate, 1/s
 omega_d = 1; % damped freq, rad/s
-omega_n_1 = 1; % natural freq from measured mass/stiffness, rad/s
+omega_n_1 = sqrt(k / mass); % natural freq from measured mass/stiffness, rad/s
 omega_n_2 = 1; % natural freq from accel, rad/s
 zeta = 1; % damping ratio, dimensionless
 
